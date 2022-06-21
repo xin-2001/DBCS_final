@@ -10,3 +10,4 @@ C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\Fin
 C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.csproj.CoreCompileInputs.cache
 C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.exe
 C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.pdb
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.Form2.resources
