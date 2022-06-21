@@ -29,21 +29,32 @@ namespace FinalProject_12
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.database1DataSet = new FinalProject_12.Database1DataSet();
+            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableTableAdapter = new FinalProject_12.Database1DataSetTableAdapters.TableTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
             // 
+            this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tableBindingSource, "店名", true));
+            this.listBox1.DataSource = this.tableBindingSource;
+            this.listBox1.DisplayMember = "店名";
+            this.listBox1.Font = new System.Drawing.Font("UD Digi Kyokasho NP-R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
+            this.listBox1.ItemHeight = 26;
             this.listBox1.Location = new System.Drawing.Point(12, 77);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(313, 379);
+            this.listBox1.Size = new System.Drawing.Size(313, 368);
             this.listBox1.TabIndex = 9;
+            this.listBox1.ValueMember = "店名";
             // 
             // button1
             // 
@@ -84,6 +95,20 @@ namespace FinalProject_12
             this.label2.Text = "特約搜尋器";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableBindingSource
+            // 
+            this.tableBindingSource.DataMember = "Table";
+            this.tableBindingSource.DataSource = this.database1DataSet;
+            // 
+            // tableTableAdapter
+            // 
+            this.tableTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -96,6 +121,9 @@ namespace FinalProject_12
             this.Controls.Add(this.label2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,6 +135,9 @@ namespace FinalProject_12
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        private Database1DataSet database1DataSet;
+        private System.Windows.Forms.BindingSource tableBindingSource;
+        private Database1DataSetTableAdapters.TableTableAdapter tableTableAdapter;
     }
 }
 

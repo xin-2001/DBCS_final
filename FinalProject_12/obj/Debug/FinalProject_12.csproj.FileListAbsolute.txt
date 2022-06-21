@@ -1,0 +1,12 @@
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\bin\Debug\Database1.mdf
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\bin\Debug\Database1_log.ldf
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\bin\Debug\FinalProject_12.exe.config
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\bin\Debug\FinalProject_12.exe
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\bin\Debug\FinalProject_12.pdb
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.csproj.AssemblyReference.cache
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.Form1.resources
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.Properties.Resources.resources
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.csproj.GenerateResource.cache
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.csproj.CoreCompileInputs.cache
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.exe
+C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.pdb
