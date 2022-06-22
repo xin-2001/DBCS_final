@@ -25,6 +25,7 @@ namespace FinalProject_12
 
         string strSQL1 = "";
         string strSQL2 = "";
+        string strSQL3 = "";
         string keywords = "";
         int beSearched = 0;
 
@@ -63,13 +64,25 @@ namespace FinalProject_12
                         listBox1.Items.Add(s);
                         label2.Text = "SQL1";
                     }
-                    else if (strSQL == strSQL2){
+                    else if (strSQL == strSQL3)
+                    {
+                        label2.Text = keywords.Length.ToString();
+                        string s = "";
+                        beSearched = (int)objDR["id"];
+                        s = "[" + objDR["類別"].ToString() + "]" + objDR["店名"].ToString();
+                        listBox1.Items.Add(s);
+
+                        label2.Text += s;
+                        label2.Text = "SQL3";
+                        label2.Text += beSearched.ToString();
+                        label2.Text += strSQL;
+                    }
+                    else if (strSQL == strSQL2)
+                    {
                         label2.Text = "SQL2";
                         string s = "";
                         beSearched = (int)objDR["id"];
                         s = "[" + objDR["類別"].ToString() + "]" + objDR["店名"].ToString();
-
-
                         listBox1.Items.Add(s);
                         label2.Text = "SQL2";
 
@@ -83,6 +96,19 @@ namespace FinalProject_12
                 }
 
             }
+            else {
+                if (strSQL == strSQL2 && beSearched==dataCount) {
+
+                    label2.Text = "SQL2";
+                    textBox1.Text += "查無資料，點選放大鏡回到選單";
+                }
+                if (strSQL == strSQL3 && beSearched == dataCount)
+                {
+                    textBox1.Text = "查無資料，點選放大鏡回到選單";
+                    label2.Text += "SQL3#關鍵字錯誤";
+
+                }
+            }
             //重點結束
             objCon.Close();
             objDR.Close();
@@ -92,28 +118,65 @@ namespace FinalProject_12
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            keywords = "";
             //string select = "";
             beSearched = 0;
-            if (textBox1.Text == "請輸入搜尋內容" && textBox1.ForeColor == Color.Red)
+            keywords = textBox1.Text;
+            if ((textBox1.Text == "請輸入搜尋內容" && textBox1.ForeColor == Color.Red)|| textBox1.Text == "查無資料，點選放大鏡回到選單")
                 textBox1.Text = "";
             textBox1.ForeColor = Color.Black;
             if (textBox1.Text == "")
             {
                 listBox1.Items.Clear();
-                strSQL1 =  " select * from [Table] where id = ";
-                for(int i = 0; i < dataCount; i++) {
-                    strSQL1 = " select * from [Table] where id = "+i.ToString();
+                strSQL1 = " select * from [Table] where id = ";
+                for (int i = 0; i < dataCount; i++)
+                {
+                    strSQL1 = " select * from [Table] where id = " + i.ToString();
                     sqlSearch1(keywords, strSQL1);
                     strSQL1 = " select * from [Table] where id = ";
                 }
                 textBox1.Text = "請輸入搜尋內容";  //測試
                 textBox1.ForeColor = Color.Red;
+                //beSearched = 0;
+            }
+            else if (textBox1.Text[0] == '#') {
+                label2.Text = "#關鍵字";
+                keywords = "";
+                for (int i = 1; i < textBox1.Text.Length; i++) {
+                    keywords += textBox1.Text[i];
+                }
+                listBox1.Items.Clear();
+                try
+                {
+                    if (keywords.Length > 0) { 
+                    label2.Text += strSQL3;
+                    for (int i = 0; i < dataCount; i++)
+                    {
+                        strSQL3 = "SELECT * " +
+                                  "FROM[Table] " +
+                                  "WHERE 類別 = N'" + keywords + "' AND Id > " +
+                                  beSearched.ToString() + "";
+                        sqlSearch1(keywords, strSQL3);
+                    }
+                    }
+                }
+
+                catch (System.Data.SqlClient.SqlException error5)
+                {
+                    label2.Text = "沒料";
+                    label2.Text += error5.ToString();
+                    label2.Text += strSQL3;
+                
+                }
+                //beSearched = 0;
             }
             else
             {
                 listBox1.Items.Clear();
                 keywords = textBox1.Text;
-                for(int i = 0; i < dataCount; i++) {
+                for (int i = 0; i < dataCount; i++)
+                {
                     strSQL2 = "SELECT * " +
                               "FROM[Table]" +
                               "WHERE ( 店名 LIKE '" + keywords + "%' OR " +
@@ -125,27 +188,15 @@ namespace FinalProject_12
                         sqlSearch1(keywords, strSQL2);
                     }
 
-                    catch (System.Data.SqlClient.SqlException error5) {
+                    catch (System.Data.SqlClient.SqlException error5)
+                    {
                         label2.Text = "沒料";
                         label2.Text += error5.ToString();
                         label2.Text += strSQL2;
-                    
+
                     }
                 }
-                //不確定還沒測，但應該可以，我有模擬過，我昨天就在找語法，之前寫過
-                //你成功了。
-
-                //研究SQL怎麼寫
-                //用東西裝select完的資料
-
-                //清空list
-                //listBox1.Items.Clear();
-                //但好像不能直接清空，那就直接更改select的內容
-
-                //將select完的東西add上去
-                //listBox1.Items.Add();
-
-
+                beSearched = 0;
             }
         }
 
@@ -185,6 +236,9 @@ namespace FinalProject_12
             if (textBox1.Text == "請輸入搜尋內容" && textBox1.ForeColor == Color.Red)
                 textBox1.Text = "";
             textBox1.ForeColor = Color.Black;
+            if (textBox1.Text == "查無資料，點選放大鏡回到選單") {
+                textBox1.Text = "";
+            }
             //我寫了比你更廢的功能，請查收。
 
         }
