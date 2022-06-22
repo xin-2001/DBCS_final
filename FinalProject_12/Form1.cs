@@ -60,7 +60,8 @@ namespace FinalProject_12
             {//檢測是否有資料
                 try
                 {
-                    label2.Text += objDR["類別"].ToString();
+                    objDR.Read();
+                    label2.Text += objDR["店名"].ToString();
                 }
                 catch (InvalidOperationException error3)
                 {
@@ -88,9 +89,10 @@ namespace FinalProject_12
             else
             {
                 shopName = textBox1.Text;
-                select = "select 店名 frome" + this.database1DataSet.Table + "where 店名 LIKE '"+shopName+ "%' or 店名 LIKE '%" + shopName + "%' or 店名 LIKE '%" + shopName + "';";
+                select = "select 店名 frome" + this.database1DataSet.Table + "where 店名 LIKE '"+shopName+ "%' or 店名 LIKE '%" + shopName + "%' or 店名 LIKE '%" + shopName + "' or 店名="+shopName+";";
 
                 //sqlSearch("test");
+                //不確定還沒測，但應該可以，我有模擬過，我昨天就在找語法，之前寫過
 
                 try
                 {
