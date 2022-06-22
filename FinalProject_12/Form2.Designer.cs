@@ -48,7 +48,7 @@ namespace FinalProject_12
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("獅尾圓體-Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.Location = new System.Drawing.Point(-9, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(355, 36);

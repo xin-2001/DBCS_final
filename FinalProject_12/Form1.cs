@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Web;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using System.Data.SqlClient;
 
 namespace FinalProject_12
 {
@@ -32,19 +35,79 @@ namespace FinalProject_12
             textBox1.ForeColor = Color.Black;
         }
 
+        void sqlSearch(string keywords) {
+            SqlConnection objCon;
+            SqlCommand objCmd;
+            SqlDataReader objDR;
+            string strDbCon, strSQL;
+            // 資料庫連接字串
+            
+            var directory = System.IO.Directory.GetCurrentDirectory();
+            strDbCon = "Data Source= " +
+                       "(LocalDB)\\MSSQLLocalDB; " +
+                       "AttachDbFilename =" +
+                       directory +
+                       "\\Database1.mdf; " +
+                       "Integrated Security = True";
+            objCon = new SqlConnection(strDbCon);
+            objCon.Open(); // 開啟資料庫連接
+            strSQL = "SELECT * FROM [Table] ";
+            objCmd = new SqlCommand(strSQL, objCon);
+            objDR = objCmd.ExecuteReader();
+            //重點
+            label2.Text += objDR;
+            if (objDR.HasRows)
+            {//檢測是否有資料
+                try
+                {
+                    label2.Text += objDR["類別"].ToString();
+                }
+                catch (InvalidOperationException error3)
+                {
+                    label2.Text += "你沒料";
+                    label2.Text += error3.ToString();
+                }
+
+            }
+            //重點結束
+            objCon.Close();
+            objDR.Close();
+
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string shopName = "";
             string select = "";
             if(textBox1.Text == "")
             {
-                textBox1.Text = "請輸入";  //測試
+                textBox1.Text = "請輸入搜尋內容";  //測試
                 textBox1.ForeColor = Color.Red;
             }
             else
             {
                 shopName = textBox1.Text;
                 select = "select 店名 frome" + this.database1DataSet.Table + "where 店名 LIKE '"+shopName+ "%' or 店名 LIKE '%" + shopName + "%' or 店名 LIKE '%" + shopName + "';";
+
+                //sqlSearch("test");
+
+                try
+                {
+                    sqlSearch("test");
+                }
+                catch (SqlException error)
+                {
+                    label2.Text += "no不好耶1";
+                    label2.Text += error.ToString();
+                }
+                catch (ArgumentException error2)
+                {
+                    label2.Text += "no不好耶2";
+                    label2.Text += error2.ToString();
+
+                }
+
                 //研究SQL怎麼寫
                 //用東西裝select完的資料
 
@@ -55,7 +118,7 @@ namespace FinalProject_12
                 //將select完的東西add上去
                 //listBox1.Items.Add();
 
-            
+
             }
         }
 
@@ -70,7 +133,18 @@ namespace FinalProject_12
             //this.Visible = false;  //我是覺得不要讓低一個form消失比較好
             //f.Visible = true;
             f.Show(this);
+
+            // 我覺得現在會有
             
+
+        }
+        //textbox獲得焦點
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "請輸入搜尋內容" && textBox1.ForeColor == Color.Red)
+                textBox1.Text = "";
+            textBox1.ForeColor = Color.Black;
+            //我寫了比你更廢的功能，請查收。
 
         }
     }

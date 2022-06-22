@@ -11,3 +11,16 @@ C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\Fin
 C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.exe
 C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.pdb
 C:\Users\ACER\OneDrive - National Pingtung University\桌面\FinalProject_12\FinalProject_12\obj\Debug\FinalProject_12.Form2.resources
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\obj\Debug\FinalProject_12.csproj.AssemblyReference.cache
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\obj\Debug\FinalProject_12.Form1.resources
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\obj\Debug\FinalProject_12.Form2.resources
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\obj\Debug\FinalProject_12.Properties.Resources.resources
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\obj\Debug\FinalProject_12.csproj.GenerateResource.cache
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\obj\Debug\FinalProject_12.csproj.CoreCompileInputs.cache
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\obj\Debug\FinalProject_12.exe
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\obj\Debug\FinalProject_12.pdb
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\bin\Debug\Database1.mdf
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\bin\Debug\Database1_log.ldf
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\bin\Debug\FinalProject_12.exe.config
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\bin\Debug\FinalProject_12.exe
+D:\work!\DBCS_final\DBCS_final\FinalProject_12\bin\Debug\FinalProject_12.pdb
