@@ -50,12 +50,16 @@ namespace FinalProject_12
                        "\\Database1.mdf; " +
                        "Integrated Security = True";
             objCon = new SqlConnection(strDbCon);
+            string ShopName = textBox1.Text;
             objCon.Open(); // 開啟資料庫連接
-            strSQL = "SELECT * FROM [Table] ";
+            strSQL = "select 店名 from [Table] " + "where 店名 LIKE N'" + ShopName + "%' or 店名 LIKE N'%" + ShopName + "%' or 店名 LIKE N'%" + ShopName + "' or 店名 = N'" + ShopName + "'";
             objCmd = new SqlCommand(strSQL, objCon);
             objDR = objCmd.ExecuteReader();
             //重點
             label2.Text += objDR;
+
+
+
             if (objDR.HasRows)
             {//檢測是否有資料
                 try
@@ -89,8 +93,8 @@ namespace FinalProject_12
             else
             {
                 shopName = textBox1.Text;
-                select = "select 店名 frome" + this.database1DataSet.Table + "where 店名 LIKE '"+shopName+ "%' or 店名 LIKE '%" + shopName + "%' or 店名 LIKE '%" + shopName + "' or 店名="+shopName+";";
-
+                select = "select 店名 from [Table] " + "where 店名 LIKE N'" + shopName + "%' or 店名 LIKE N'%" + shopName + "%' or 店名 LIKE N'%" + shopName + "' or 店名 = N'" + shopName + "'";
+                
                 //sqlSearch("test");
                 //不確定還沒測，但應該可以，我有模擬過，我昨天就在找語法，之前寫過
 

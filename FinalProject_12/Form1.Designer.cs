@@ -39,8 +39,10 @@ namespace FinalProject_12
             this.label1 = new System.Windows.Forms.Label();
             this.tableTableAdapter = new FinalProject_12.Database1DataSetTableAdapters.TableTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
+            this.tableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -124,6 +126,11 @@ namespace FinalProject_12
             this.label2.TabIndex = 10;
             this.label2.Text = "label1";
             // 
+            // tableBindingSource1
+            // 
+            this.tableBindingSource1.DataMember = "Table";
+            this.tableBindingSource1.DataSource = this.database1DataSet;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -140,6 +147,7 @@ namespace FinalProject_12
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,6 +163,7 @@ namespace FinalProject_12
         private System.Windows.Forms.BindingSource tableBindingSource;
         private Database1DataSetTableAdapters.TableTableAdapter tableTableAdapter;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource tableBindingSource1;
     }
 }
 
