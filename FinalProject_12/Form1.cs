@@ -50,16 +50,11 @@ namespace FinalProject_12
                        "\\Database1.mdf; " +
                        "Integrated Security = True";
             objCon = new SqlConnection(strDbCon);
-            string ShopName = textBox1.Text;
             objCon.Open(); // 開啟資料庫連接
-            strSQL = "select 店名 from [Table] " + "where 店名 LIKE N'" + ShopName + "%' or 店名 LIKE N'%" + ShopName + "%' or 店名 LIKE N'%" + ShopName + "' or 店名 = N'" + ShopName + "'";
+            strSQL = "select 店名 from [Table] " + "where 店名 LIKE N'" + keywords + "%' or 店名 LIKE N'%" + keywords + "%' or 店名 LIKE N'%" + keywords + "' or 店名 = N'" + keywords + "'";
             objCmd = new SqlCommand(strSQL, objCon);
             objDR = objCmd.ExecuteReader();
             //重點
-            label2.Text += objDR;
-
-
-
             if (objDR.HasRows)
             {//檢測是否有資料
                 try
@@ -84,7 +79,7 @@ namespace FinalProject_12
         private void button1_Click(object sender, EventArgs e)
         {
             string shopName = "";
-            string select = "";
+            //string select = "";
             if(textBox1.Text == "")
             {
                 textBox1.Text = "請輸入搜尋內容";  //測試
@@ -93,14 +88,12 @@ namespace FinalProject_12
             else
             {
                 shopName = textBox1.Text;
-                select = "select 店名 from [Table] " + "where 店名 LIKE N'" + shopName + "%' or 店名 LIKE N'%" + shopName + "%' or 店名 LIKE N'%" + shopName + "' or 店名 = N'" + shopName + "'";
-                
-                //sqlSearch("test");
+                //sqlSearch(shopName);
                 //不確定還沒測，但應該可以，我有模擬過，我昨天就在找語法，之前寫過
 
                 try
                 {
-                    sqlSearch("test");
+                    sqlSearch(shopName);
                 }
                 catch (SqlException error)
                 {

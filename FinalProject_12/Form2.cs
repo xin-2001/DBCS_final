@@ -15,12 +15,7 @@ namespace FinalProject_12
     public partial class Form2 : Form
     {
         public string ShopName;
-        public Form2(string shopName)
-        {
-            InitializeComponent();
-            label1.Text = shopName;
-            ShopName = shopName;
-        }
+        
         void sqlSearch(string keywords)
         {
             SqlConnection objCon;
@@ -39,18 +34,31 @@ namespace FinalProject_12
             objCon = new SqlConnection(strDbCon);
             objCon.Open(); // 開啟資料庫連接
             //strSQL = "SELECT * FROM [Table] ";
-            strSQL = "select 店名 from [Table] " + "where 店名 LIKE N'" + ShopName + "%' or 店名 LIKE N'%" + ShopName + "%' or 店名 LIKE N'%" + ShopName + "' or 店名 = N'" + ShopName +"'";
+            strSQL = "select * from [Table] " + "where 店名 LIKE N'" + keywords + "%' or 店名 LIKE N'%" + keywords + "%' or 店名 LIKE N'%" + keywords + "' or 店名 = N'" + keywords + "'";
             objCmd = new SqlCommand(strSQL, objCon);
             objDR = objCmd.ExecuteReader();
             //重點
-            //label1.Text += objDR;
-            label1.Text += objDR;
+
+            //test zone
+            label1.Text = "";
+            //test zone
+
             if (objDR.HasRows)
             {//檢測是否有資料
+
+                //test zone
+                label1.Text = "1";
+                //test zone
                 try
                 {
-                    objDR.Read();
-                    label1.Text += objDR["店名"].ToString();
+                    while (objDR.Read()) {
+                        //[類別]店名、特約內容、電話(如果有空就做可以按下去直接跳到撥號)、地址(按下去跳map)、(嵌入google map)
+                        //label1.Text = "";
+                        label1.Text += objDR["店名"].ToString() + "\n";
+                        label1.Text += objDR["特約內容"].ToString() + "\n";
+                        label1.Text += objDR["電話"].ToString() + "\n";
+                        label1.Text += objDR["地址"].ToString() + "\n";
+                    }
                 }
                 catch (InvalidOperationException error3)
                 {
@@ -69,10 +77,15 @@ namespace FinalProject_12
 
         }
 
-
+        public Form2(string shopName)
+        {
+            InitializeComponent();
+            label1.Text = shopName;
+            ShopName = shopName;
+            sqlSearch(ShopName);
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
-            sqlSearch(ShopName);
             //[類別]店名、特約內容、電話(如果有空就做可以按下去直接跳到撥號)、地址(按下去跳map)、(嵌入google map)
         }
 
