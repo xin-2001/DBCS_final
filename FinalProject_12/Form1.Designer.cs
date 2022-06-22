@@ -205,7 +205,7 @@ namespace FinalProject_12
             this.button8.Size = new System.Drawing.Size(50, 50);
             this.button8.TabIndex = 17;
             this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.Dice_Click);
             // 
             // button1
             // 

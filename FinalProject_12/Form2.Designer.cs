@@ -107,7 +107,7 @@ namespace FinalProject_12
             // 
             this.textBox1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("獅尾圓體-Regular", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.textBox1.Location = new System.Drawing.Point(16, 116);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
