@@ -47,8 +47,6 @@ namespace FinalProject_12
             // 
             // listBox1
             // 
-            this.listBox1.DataSource = this.tableBindingSource;
-            this.listBox1.DisplayMember = "type";
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 29;
@@ -56,7 +54,6 @@ namespace FinalProject_12
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(313, 352);
             this.listBox1.TabIndex = 9;
-            this.listBox1.ValueMember = "type";
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // tableBindingSource
