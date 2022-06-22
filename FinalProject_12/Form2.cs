@@ -57,7 +57,7 @@ namespace FinalProject_12
                     objDR.Read();
                     label1.Text = "[" + objDR["類別"].ToString() + "]";
                     label6.Text = "\n" + objDR["店名"].ToString();
-                    label3.Text += "\n" + objDR["特約內容"].ToString();
+                    textBox1.Text +=  objDR["特約內容"].ToString();
                     label4.Text += "\n" + objDR["電話"].ToString();
                     label5.Text += "\n" + objDR["地址"].ToString();
                     address = "https://www.google.com.tw/maps/place/" + objDR["地址"].ToString();
