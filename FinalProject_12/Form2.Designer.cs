@@ -48,7 +48,7 @@ namespace FinalProject_12
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(612, 29);
+            this.label2.Size = new System.Drawing.Size(1247, 29);
             this.label2.TabIndex = 7;
             this.label2.Text = "特約搜尋器";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -58,7 +58,7 @@ namespace FinalProject_12
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(600, 22);
+            this.label1.Size = new System.Drawing.Size(471, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "[類別]";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -66,9 +66,9 @@ namespace FinalProject_12
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(54, 194);
+            this.label4.Location = new System.Drawing.Point(12, 258);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(497, 68);
+            this.label4.Size = new System.Drawing.Size(445, 68);
             this.label4.TabIndex = 10;
             this.label4.Text = "電話";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -76,9 +76,9 @@ namespace FinalProject_12
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(54, 262);
+            this.label5.Location = new System.Drawing.Point(5, 377);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(497, 68);
+            this.label5.Size = new System.Drawing.Size(464, 68);
             this.label5.TabIndex = 11;
             this.label5.Text = "地址";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -88,18 +88,18 @@ namespace FinalProject_12
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(7, 29);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(600, 68);
+            this.label6.Size = new System.Drawing.Size(469, 68);
             this.label6.TabIndex = 12;
             this.label6.Text = "店名";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(4, 349);
+            this.webBrowser1.Location = new System.Drawing.Point(475, 32);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScrollBarsEnabled = false;
-            this.webBrowser1.Size = new System.Drawing.Size(605, 500);
+            this.webBrowser1.Size = new System.Drawing.Size(760, 594);
             this.webBrowser1.TabIndex = 13;
             this.webBrowser1.TabStop = false;
             // 
@@ -108,20 +108,20 @@ namespace FinalProject_12
             this.textBox1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox1.Location = new System.Drawing.Point(16, 116);
+            this.textBox1.Location = new System.Drawing.Point(16, 129);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(584, 75);
+            this.textBox1.Size = new System.Drawing.Size(460, 97);
             this.textBox1.TabIndex = 14;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 86);
+            this.label3.Location = new System.Drawing.Point(31, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(497, 27);
+            this.label3.Size = new System.Drawing.Size(421, 27);
             this.label3.TabIndex = 15;
             this.label3.Text = "特約內容";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -132,15 +132,15 @@ namespace FinalProject_12
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(633, 548);
+            this.ClientSize = new System.Drawing.Size(1247, 635);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
