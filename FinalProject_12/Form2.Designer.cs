@@ -59,7 +59,6 @@ namespace FinalProject_12
             this.label1.TabIndex = 8;
             this.label1.Text = "[類別]";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -70,7 +69,6 @@ namespace FinalProject_12
             this.label3.TabIndex = 9;
             this.label3.Text = "特約內容";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 

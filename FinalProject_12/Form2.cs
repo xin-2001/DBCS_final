@@ -94,14 +94,5 @@ namespace FinalProject_12
             //[類別]店名、特約內容、電話(如果有空就做可以按下去直接跳到撥號)、地址(按下去跳map)、(嵌入google map)
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
