@@ -34,7 +34,8 @@ namespace FinalProject_12
             objCon = new SqlConnection(strDbCon);
             objCon.Open(); // 開啟資料庫連接
             //strSQL = "SELECT * FROM [Table] ";
-            strSQL = "select * from [Table] " + "where 店名 LIKE N'" + keywords + "%' or 店名 LIKE N'%" + keywords + "%' or 店名 LIKE N'%" + keywords + "' or 店名 = N'" + keywords + "'";
+            //strSQL = "select * from [Table] " + "where 店名 LIKE N'" + keywords + "%' or 店名 LIKE N'%" + keywords + "%' or 店名 LIKE N'%" + keywords + "' or 店名 = N'" + keywords + "'";
+            strSQL = "select * from [Table] " + "where 店名 = N'" + keywords + "'";
             objCmd = new SqlCommand(strSQL, objCon);
             objDR = objCmd.ExecuteReader();
             //重點
@@ -54,10 +55,10 @@ namespace FinalProject_12
                     //label1.Text = "";
                     objDR.Read();
                     label1.Text = "[" + objDR["類別"].ToString() + "]";
-                    label1.Text += "\n" + objDR["店名"].ToString();
-                    label1.Text += "\n" + objDR["特約內容"].ToString();
-                    label1.Text += "\n" + objDR["電話"].ToString();
-                    label1.Text += "\n" + objDR["地址"].ToString();
+                    label6.Text = "\n" + objDR["店名"].ToString();
+                    label3.Text += "\n" + objDR["特約內容"].ToString();
+                    label4.Text += "\n" + objDR["電話"].ToString();
+                    label5.Text += "\n" + objDR["地址"].ToString();
 
                 }
                 catch (InvalidOperationException error3)
@@ -98,11 +99,9 @@ namespace FinalProject_12
 
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
 
-
-
-
-
-
+        }
     }
 }
