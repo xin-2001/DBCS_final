@@ -17,6 +17,7 @@ namespace FinalProject_12
     {
         public Form1()
         {
+            //為了立方commit練習<3
             InitializeComponent();
         }
 
