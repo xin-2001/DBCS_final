@@ -32,11 +32,12 @@ namespace FinalProject_12
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -57,25 +58,15 @@ namespace FinalProject_12
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(604, 22);
+            this.label1.Size = new System.Drawing.Size(600, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "[類別]";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(532, 85);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "特約內容";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(53, 194);
+            this.label4.Location = new System.Drawing.Point(54, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(497, 68);
             this.label4.TabIndex = 10;
@@ -85,7 +76,7 @@ namespace FinalProject_12
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(53, 262);
+            this.label5.Location = new System.Drawing.Point(54, 262);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(497, 68);
             this.label5.TabIndex = 11;
@@ -97,7 +88,7 @@ namespace FinalProject_12
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(7, 29);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(602, 80);
+            this.label6.Size = new System.Drawing.Size(600, 68);
             this.label6.TabIndex = 12;
             this.label6.Text = "店名";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -112,6 +103,29 @@ namespace FinalProject_12
             this.webBrowser1.TabIndex = 13;
             this.webBrowser1.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("獅尾圓體-Regular", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.textBox1.Location = new System.Drawing.Point(16, 116);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(584, 75);
+            this.textBox1.TabIndex = 14;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(55, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(497, 27);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "特約內容";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -119,11 +133,12 @@ namespace FinalProject_12
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(633, 548);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -133,16 +148,18 @@ namespace FinalProject_12
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
