@@ -363,5 +363,10 @@ namespace FinalProject_12
             Form2 f = new Form2(diceShop, dataName);
             f.Show(this);
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            label1.Visible = false;
+        }
     }
 }

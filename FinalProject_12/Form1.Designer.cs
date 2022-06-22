@@ -57,9 +57,9 @@ namespace FinalProject_12
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 29;
-            this.listBox1.Location = new System.Drawing.Point(12, 135);
+            this.listBox1.Location = new System.Drawing.Point(6, 135);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(588, 410);
+            this.listBox1.Size = new System.Drawing.Size(610, 410);
             this.listBox1.TabIndex = 9;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -82,7 +82,7 @@ namespace FinalProject_12
             this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(33, 36);
+            this.textBox1.Location = new System.Drawing.Point(40, 36);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(519, 34);
@@ -98,7 +98,7 @@ namespace FinalProject_12
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(612, 29);
+            this.label1.Size = new System.Drawing.Size(622, 29);
             this.label1.TabIndex = 6;
             this.label1.Text = "特約搜尋器";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,11 +110,12 @@ namespace FinalProject_12
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1, 461);
+            this.label2.Location = new System.Drawing.Point(83, 459);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 15);
             this.label2.TabIndex = 10;
             this.label2.Text = "label1";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tableBindingSource1
             // 
@@ -125,7 +126,7 @@ namespace FinalProject_12
             // 
             this.button2.BackColor = System.Drawing.Color.LightSalmon;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(79, 77);
+            this.button2.Location = new System.Drawing.Point(86, 77);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 25);
             this.button2.TabIndex = 11;
@@ -137,7 +138,7 @@ namespace FinalProject_12
             // 
             this.button3.BackColor = System.Drawing.Color.Moccasin;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(186, 77);
+            this.button3.Location = new System.Drawing.Point(193, 77);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(101, 25);
             this.button3.TabIndex = 12;
@@ -149,7 +150,7 @@ namespace FinalProject_12
             // 
             this.button4.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(293, 77);
+            this.button4.Location = new System.Drawing.Point(300, 77);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(101, 25);
             this.button4.TabIndex = 13;
@@ -161,7 +162,7 @@ namespace FinalProject_12
             // 
             this.button5.BackColor = System.Drawing.Color.Honeydew;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(400, 77);
+            this.button5.Location = new System.Drawing.Point(407, 77);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(101, 25);
             this.button5.TabIndex = 14;
@@ -173,7 +174,7 @@ namespace FinalProject_12
             // 
             this.button6.BackColor = System.Drawing.Color.Thistle;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(312, 106);
+            this.button6.Location = new System.Drawing.Point(319, 106);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(101, 25);
             this.button6.TabIndex = 15;
@@ -185,7 +186,7 @@ namespace FinalProject_12
             // 
             this.button7.BackColor = System.Drawing.Color.LightBlue;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(167, 106);
+            this.button7.Location = new System.Drawing.Point(174, 106);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(139, 25);
             this.button7.TabIndex = 16;
@@ -200,7 +201,7 @@ namespace FinalProject_12
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(533, 81);
+            this.button8.Location = new System.Drawing.Point(540, 81);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(50, 50);
             this.button8.TabIndex = 17;
@@ -214,7 +215,7 @@ namespace FinalProject_12
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(554, 38);
+            this.button1.Location = new System.Drawing.Point(561, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(29, 29);
             this.button1.TabIndex = 8;
@@ -226,7 +227,8 @@ namespace FinalProject_12
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(612, 548);
+            this.ClientSize = new System.Drawing.Size(622, 548);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -235,13 +237,12 @@ namespace FinalProject_12
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "特約搜尋器";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
