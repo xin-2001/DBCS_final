@@ -17,30 +17,26 @@ namespace FinalProject_12
     {
         public Form1()
         {
-            //為了立方commit練習<3
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // TODO: 這行程式碼會將資料載入 'database1DataSet.Table' 資料表。您可以視需要進行移動或移除。
-            this.tableTableAdapter.Fill(this.database1DataSet.Table);
-            
+       
 
-        }
 
-        
+        string strSQL1 = "";
+        string strSQL2 = "";
+        string keywords = "";
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             textBox1.ForeColor = Color.Black;
         }
 
-        void sqlSearch(string keywords) {
+        void sqlSearch1(string keywords,string strSQL) {
             SqlConnection objCon;
             SqlCommand objCmd;
             SqlDataReader objDR;
-            string strDbCon, strSQL;
+            string strDbCon ;
             // 資料庫連接字串
             
             var directory = System.IO.Directory.GetCurrentDirectory();
@@ -52,7 +48,6 @@ namespace FinalProject_12
                        "Integrated Security = True";
             objCon = new SqlConnection(strDbCon);
             objCon.Open(); // 開啟資料庫連接
-            strSQL = "select 店名 from [Table] " + "where 店名 LIKE N'" + keywords + "%' or 店名 LIKE N'%" + keywords + "%' or 店名 LIKE N'%" + keywords + "' or 店名 = N'" + keywords + "'";
             objCmd = new SqlCommand(strSQL, objCon);
             objDR = objCmd.ExecuteReader();
             //重點
@@ -61,7 +56,17 @@ namespace FinalProject_12
                 try
                 {
                     objDR.Read();
-                    label2.Text += objDR["店名"].ToString();
+                    if (strSQL == strSQL1)
+                    {
+                        string s = "[" + objDR["類別"].ToString() + "]"+ objDR["店名"].ToString();
+                        listBox1.Items.Add(s);
+                        label2.Text = "SQL1";
+                    }
+                    else {
+                        listBox1.Items.Clear();
+
+                        label2.Text = "SQL2";
+                    }
                 }
                 catch (InvalidOperationException error3)
                 {
@@ -79,22 +84,29 @@ namespace FinalProject_12
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string shopName = "";
             //string select = "";
-            if(textBox1.Text == "")
+            if (textBox1.Text == "")
             {
+                strSQL1 =  " select * from [Table] where id = ";
+                for(int i = 0; i < 60; i++) {
+                    strSQL1 = " select * from [Table] where id = "+i.ToString();
+                    sqlSearch1(keywords, strSQL1);
+                    strSQL1 = " select * from [Table] where id = ";
+                }
                 textBox1.Text = "請輸入搜尋內容";  //測試
                 textBox1.ForeColor = Color.Red;
             }
             else
             {
-                shopName = textBox1.Text;
-                //sqlSearch(shopName);
+                keywords = textBox1.Text;
+                strSQL2 = "select 店名 from [Table] " + "where 店名 LIKE N'" + keywords + "%' or 店名 LIKE N'%" + keywords + "%' or 店名 LIKE N'%" + keywords + "' or 店名 = N'" + keywords + "'";
+
                 //不確定還沒測，但應該可以，我有模擬過，我昨天就在找語法，之前寫過
+                //你成功了。
 
                 try
                 {
-                    sqlSearch(shopName);
+                    sqlSearch1(keywords, strSQL2);
                 }
                 catch (SqlException error)
                 {
@@ -125,9 +137,11 @@ namespace FinalProject_12
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string shopName ,dataName = "";
-            shopName = Convert.ToString(listBox1.SelectedValue);  //要用selectedvalue，不能用selecteditem
+            shopName = Convert.ToString(listBox1.SelectedItem);
+            //要用selectedvalue，不能用selecteditem[歆]  
+            //改用手刻之後要用selecteditem，不能用selectedvalue[仔仔]
 
-            int x=0;
+            int x =0;
             for(int i =0; i< shopName.Length; i++) {
                 
                 if (x >= 2) {
@@ -157,6 +171,18 @@ namespace FinalProject_12
                 textBox1.Text = "";
             textBox1.ForeColor = Color.Black;
             //我寫了比你更廢的功能，請查收。
+
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: 這行程式碼會將資料載入 'database1DataSet.Table' 資料表。您可以視需要進行移動或移除。
+            this.tableTableAdapter.Fill(this.database1DataSet.Table);
+            for (int i = 0; i < 60; i++)
+            {
+                strSQL1 = " select * from [Table] where id = " + i.ToString();
+                sqlSearch1(keywords, strSQL1);
+                strSQL1 = " select * from [Table] where id = ";
+            }
 
         }
     }
