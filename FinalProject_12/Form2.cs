@@ -56,7 +56,7 @@ namespace FinalProject_12
                     //label1.Text = "";
                     objDR.Read();
                     label1.Text = "[" + objDR["類別"].ToString() + "]";
-                    label6.Text = "\n" + objDR["店名"].ToString();
+                    label6.Text = "" + objDR["店名"].ToString();
                     textBox1.Text +=  objDR["特約內容"].ToString();
                     label4.Text += "\n" + objDR["電話"].ToString();
                     label5.Text += "\n" + objDR["地址"].ToString();

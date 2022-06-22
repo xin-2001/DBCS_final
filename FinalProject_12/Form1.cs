@@ -368,5 +368,6 @@ namespace FinalProject_12
         {
             label1.Visible = false;
         }
+
     }
 }

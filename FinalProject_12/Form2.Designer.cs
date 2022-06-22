@@ -56,9 +56,9 @@ namespace FinalProject_12
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 29);
+            this.label1.Location = new System.Drawing.Point(12, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(471, 22);
+            this.label1.Size = new System.Drawing.Size(450, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "[類別]";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -66,9 +66,9 @@ namespace FinalProject_12
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 258);
+            this.label4.Location = new System.Drawing.Point(12, 351);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(445, 68);
+            this.label4.Size = new System.Drawing.Size(450, 68);
             this.label4.TabIndex = 10;
             this.label4.Text = "電話";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -76,9 +76,9 @@ namespace FinalProject_12
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 377);
+            this.label5.Location = new System.Drawing.Point(12, 501);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(464, 68);
+            this.label5.Size = new System.Drawing.Size(450, 68);
             this.label5.TabIndex = 11;
             this.label5.Text = "地址";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -86,9 +86,9 @@ namespace FinalProject_12
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 29);
+            this.label6.Location = new System.Drawing.Point(12, 107);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(469, 68);
+            this.label6.Size = new System.Drawing.Size(450, 68);
             this.label6.TabIndex = 12;
             this.label6.Text = "店名";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -107,21 +107,21 @@ namespace FinalProject_12
             // 
             this.textBox1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox1.Location = new System.Drawing.Point(16, 129);
+            this.textBox1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(12, 221);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(460, 97);
+            this.textBox1.Size = new System.Drawing.Size(450, 127);
             this.textBox1.TabIndex = 14;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 99);
+            this.label3.Location = new System.Drawing.Point(12, 191);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(421, 27);
+            this.label3.Size = new System.Drawing.Size(450, 27);
             this.label3.TabIndex = 15;
             this.label3.Text = "特約內容";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;

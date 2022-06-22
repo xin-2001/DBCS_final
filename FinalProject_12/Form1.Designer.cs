@@ -47,19 +47,25 @@ namespace FinalProject_12
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
             // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 29;
-            this.listBox1.Location = new System.Drawing.Point(6, 135);
+            this.listBox1.Location = new System.Drawing.Point(0, 156);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(610, 410);
+            this.listBox1.Size = new System.Drawing.Size(622, 410);
             this.listBox1.TabIndex = 9;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -82,7 +88,7 @@ namespace FinalProject_12
             this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(40, 36);
+            this.textBox1.Location = new System.Drawing.Point(0, 3);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(519, 34);
@@ -93,12 +99,13 @@ namespace FinalProject_12
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("UD Digi Kyokasho NP-R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(622, 29);
+            this.label1.Size = new System.Drawing.Size(622, 30);
             this.label1.TabIndex = 6;
             this.label1.Text = "特約搜尋器";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,9 +133,9 @@ namespace FinalProject_12
             // 
             this.button2.BackColor = System.Drawing.Color.LightSalmon;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(86, 77);
+            this.button2.Location = new System.Drawing.Point(38, 43);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 25);
+            this.button2.Size = new System.Drawing.Size(101, 28);
             this.button2.TabIndex = 11;
             this.button2.Text = "#肚子好餓";
             this.button2.UseVisualStyleBackColor = false;
@@ -138,9 +145,9 @@ namespace FinalProject_12
             // 
             this.button3.BackColor = System.Drawing.Color.Moccasin;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(193, 77);
+            this.button3.Location = new System.Drawing.Point(159, 45);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 25);
+            this.button3.Size = new System.Drawing.Size(101, 28);
             this.button3.TabIndex = 12;
             this.button3.Text = "#渴了嗎？";
             this.button3.UseVisualStyleBackColor = false;
@@ -150,9 +157,9 @@ namespace FinalProject_12
             // 
             this.button4.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(300, 77);
+            this.button4.Location = new System.Drawing.Point(266, 45);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 25);
+            this.button4.Size = new System.Drawing.Size(101, 28);
             this.button4.TabIndex = 13;
             this.button4.Text = "#清涼一下";
             this.button4.UseVisualStyleBackColor = false;
@@ -162,9 +169,9 @@ namespace FinalProject_12
             // 
             this.button5.BackColor = System.Drawing.Color.Honeydew;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(407, 77);
+            this.button5.Location = new System.Drawing.Point(383, 43);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(101, 25);
+            this.button5.Size = new System.Drawing.Size(101, 28);
             this.button5.TabIndex = 14;
             this.button5.Text = "#日常生活";
             this.button5.UseVisualStyleBackColor = false;
@@ -174,7 +181,7 @@ namespace FinalProject_12
             // 
             this.button6.BackColor = System.Drawing.Color.Thistle;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(319, 106);
+            this.button6.Location = new System.Drawing.Point(311, 77);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(101, 25);
             this.button6.TabIndex = 15;
@@ -186,7 +193,7 @@ namespace FinalProject_12
             // 
             this.button7.BackColor = System.Drawing.Color.LightBlue;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(174, 106);
+            this.button7.Location = new System.Drawing.Point(109, 77);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(139, 25);
             this.button7.TabIndex = 16;
@@ -201,7 +208,7 @@ namespace FinalProject_12
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(540, 81);
+            this.button8.Location = new System.Drawing.Point(506, 52);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(50, 50);
             this.button8.TabIndex = 17;
@@ -215,31 +222,48 @@ namespace FinalProject_12
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(561, 38);
+            this.button1.Location = new System.Drawing.Point(527, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(29, 29);
             this.button1.TabIndex = 8;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(622, 566);
+            this.panel1.TabIndex = 18;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Location = new System.Drawing.Point(30, 44);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(556, 109);
+            this.panel2.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(622, 548);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(622, 566);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "特約搜尋器";
@@ -247,6 +271,9 @@ namespace FinalProject_12
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,6 +297,8 @@ namespace FinalProject_12
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
