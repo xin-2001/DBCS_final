@@ -47,7 +47,7 @@ namespace FinalProject_12
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(295, 29);
+            this.label2.Size = new System.Drawing.Size(316, 29);
             this.label2.TabIndex = 7;
             this.label2.Text = "特約搜尋器";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,7 +109,6 @@ namespace FinalProject_12
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(291, 250);
             this.webBrowser1.TabIndex = 13;
-            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // Form2
             // 
@@ -117,7 +116,7 @@ namespace FinalProject_12
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(316, 430);
+            this.ClientSize = new System.Drawing.Size(337, 430);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

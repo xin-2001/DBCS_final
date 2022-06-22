@@ -20,12 +20,13 @@ namespace FinalProject_12
             InitializeComponent();
         }
 
-       
-
+        //資料庫資料筆數
+        int dataCount = 60;
 
         string strSQL1 = "";
         string strSQL2 = "";
         string keywords = "";
+        int beSearched = 0;
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -58,14 +59,21 @@ namespace FinalProject_12
                     objDR.Read();
                     if (strSQL == strSQL1)
                     {
-                        string s = "[" + objDR["類別"].ToString() + "]"+ objDR["店名"].ToString();
+                        string s = "[" + objDR["類別"].ToString() + "]" + objDR["店名"].ToString();
                         listBox1.Items.Add(s);
                         label2.Text = "SQL1";
                     }
-                    else {
-                        listBox1.Items.Clear();
-
+                    else if (strSQL == strSQL2){
                         label2.Text = "SQL2";
+                        string s = "";
+                        beSearched = (int)objDR["id"];
+                        s = "[" + objDR["類別"].ToString() + "]" + objDR["店名"].ToString();
+
+
+                        listBox1.Items.Add(s);
+                        label2.Text = "SQL2";
+
+                        label2.Text += s;
                     }
                 }
                 catch (InvalidOperationException error3)
@@ -85,10 +93,15 @@ namespace FinalProject_12
         private void button1_Click(object sender, EventArgs e)
         {
             //string select = "";
+            beSearched = 0;
+            if (textBox1.Text == "請輸入搜尋內容" && textBox1.ForeColor == Color.Red)
+                textBox1.Text = "";
+            textBox1.ForeColor = Color.Black;
             if (textBox1.Text == "")
             {
+                listBox1.Items.Clear();
                 strSQL1 =  " select * from [Table] where id = ";
-                for(int i = 0; i < 60; i++) {
+                for(int i = 0; i < dataCount; i++) {
                     strSQL1 = " select * from [Table] where id = "+i.ToString();
                     sqlSearch1(keywords, strSQL1);
                     strSQL1 = " select * from [Table] where id = ";
@@ -98,27 +111,29 @@ namespace FinalProject_12
             }
             else
             {
+                listBox1.Items.Clear();
                 keywords = textBox1.Text;
-                strSQL2 = "select 店名 from [Table] " + "where 店名 LIKE N'" + keywords + "%' or 店名 LIKE N'%" + keywords + "%' or 店名 LIKE N'%" + keywords + "' or 店名 = N'" + keywords + "'";
+                for(int i = 0; i < dataCount; i++) {
+                    strSQL2 = "SELECT * " +
+                              "FROM[Table]" +
+                              "WHERE ( 店名 LIKE '" + keywords + "%' OR " +
+                              "店名 LIKE N'%" + keywords + "%' OR " +
+                              "店名 LIKE N'%" + keywords + "' OR " +
+                              "店名 = N'" + keywords + " ') AND Id > " + beSearched.ToString() + "";
+                    try
+                    {
+                        sqlSearch1(keywords, strSQL2);
+                    }
 
+                    catch (System.Data.SqlClient.SqlException error5) {
+                        label2.Text = "沒料";
+                        label2.Text += error5.ToString();
+                        label2.Text += strSQL2;
+                    
+                    }
+                }
                 //不確定還沒測，但應該可以，我有模擬過，我昨天就在找語法，之前寫過
                 //你成功了。
-
-                try
-                {
-                    sqlSearch1(keywords, strSQL2);
-                }
-                catch (SqlException error)
-                {
-                    label2.Text += "no不好耶1";
-                    label2.Text += error.ToString();
-                }
-                catch (ArgumentException error2)
-                {
-                    label2.Text += "no不好耶2";
-                    label2.Text += error2.ToString();
-
-                }
 
                 //研究SQL怎麼寫
                 //用東西裝select完的資料
@@ -177,7 +192,7 @@ namespace FinalProject_12
         {
             // TODO: 這行程式碼會將資料載入 'database1DataSet.Table' 資料表。您可以視需要進行移動或移除。
             this.tableTableAdapter.Fill(this.database1DataSet.Table);
-            for (int i = 0; i < 60; i++)
+            for (int i = 0; i < dataCount; i++)
             {
                 strSQL1 = " select * from [Table] where id = " + i.ToString();
                 sqlSearch1(keywords, strSQL1);
