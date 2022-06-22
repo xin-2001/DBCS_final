@@ -123,12 +123,24 @@ namespace FinalProject_12
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string shopName = "";
+            string shopName ,dataName = "";
             shopName = Convert.ToString(listBox1.SelectedValue);  //要用selectedvalue，不能用selecteditem
+
+            int x=0;
+            for(int i =0; i< shopName.Length; i++) {
+                
+                if (x >= 2) {
+                    dataName += shopName[i];
+
+                }
+                if (shopName[i] == '[') x++;
+                if (shopName[i] == ']') x++;
+            }
+
             //Console.WriteLine(shopName);
             //點選到我們要跳新視窗，還是彈出窗格?我先做跳新視窗的
             //Form2 f = new Form2();  //括號內是用來傳東西的
-            Form2 f = new Form2(shopName);
+            Form2 f = new Form2(shopName,dataName);
             //this.Visible = false;  //我是覺得不要讓低一個form消失比較好
             //f.Visible = true;
             f.Show(this);

@@ -51,7 +51,7 @@ namespace FinalProject_12
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.Location = new System.Drawing.Point(-9, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(355, 36);
+            this.label1.Size = new System.Drawing.Size(355, 407);
             this.label1.TabIndex = 8;
             this.label1.Text = "[類別]店家";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
