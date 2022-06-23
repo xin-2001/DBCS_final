@@ -17,7 +17,7 @@ namespace FinalProject_12
         public string ShopName;
         public string address;
         
-        void sqlSearch(string keywords)
+        void sqlSearch2(string keywords)
         {
             SqlConnection objCon;
             SqlCommand objCmd;
@@ -89,7 +89,7 @@ namespace FinalProject_12
             InitializeComponent();
             label1.Text = dataName;
             ShopName = shopName;
-            sqlSearch(dataName);
+            sqlSearch2(dataName);
         }
         private void Form2_Load(object sender, EventArgs e)
         {

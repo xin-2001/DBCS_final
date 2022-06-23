@@ -18,7 +18,10 @@ namespace FinalProject_12
         public Form1()
         {
             InitializeComponent();
+            //測試訊息關
             label2.Visible = false;
+            //測試訊息開
+            //label2.Visible = true;
         }
 
         //資料庫資料筆數
@@ -68,16 +71,17 @@ namespace FinalProject_12
                         listBox1.Items.Add(s);
                         label2.Text = "SQL1";
                     }
-                    else if (strSQL == strSQL3)
+                    else if (strSQL == strSQL3 || strSQL == strSQL2)
                     {
-                        label2.Text = "有料";
-                        label2.Text += keywords.Length.ToString();
-                        label2.Text += strSQL;
+                        //label2.Text = "有料SQL3/2";
+                        //label2.Text += keywords.Length.ToString();
+                        //label2.Text += strSQL;
                         string s = "";
                         beSearched = (int)objDR["id"];
                         s = "[" + objDR["類別"].ToString() + "]" + objDR["店名"].ToString();
                         listBox1.Items.Add(s);
                     }
+                    /*
                     else if (strSQL == strSQL2)
                     {
                         label2.Text = "SQL2";
@@ -89,6 +93,7 @@ namespace FinalProject_12
 
                         label2.Text += s;
                     }
+                    */
                     else if (strSQL == strSQL4) {
                         label2.Text = "SQL4";
                         diceShop = "[" + objDR["類別"].ToString() + "]" + objDR["店名"].ToString();
@@ -125,9 +130,20 @@ namespace FinalProject_12
             
         }
 
+        private void userPressEnter(object sender, KeyEventArgs e)
+        {
+           
+            if (e.KeyCode == Keys.Enter)
+
+            {
+                //button1.Focus();
+                button1_Click(sender, e);
+                //textBox1.Focus();
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
             //string select = "";
             beSearched = 0;
             keywords = textBox1.Text;
@@ -158,15 +174,15 @@ namespace FinalProject_12
                 try
                 {
                     label2.Text += keywords;
-                    if (keywords.Length > 0) { 
-                    for (int i = 0; i < dataCount; i++)
-                    {
-                        strSQL3 = "SELECT * " +
-                                  "FROM[Table] " +
-                                  "WHERE 類別 = N'" + keywords + "' AND Id > " +
-                                  beSearched.ToString() + "";
-                        sqlSearch1(keywords, strSQL3);
-                    }
+                    if (keywords.Length > 0) {
+                        for (int i = 0; i < dataCount; i++)
+                        {
+                            strSQL3 = "SELECT * " +
+                                      "FROM[Table] " +
+                                      "WHERE 類別 = N'" + keywords + "' AND Id > " +
+                                      beSearched.ToString() + "";
+                            sqlSearch1(keywords, strSQL3);
+                        }
 
                         label2.Text += strSQL3;
                     }
@@ -178,7 +194,7 @@ namespace FinalProject_12
                     label2.Text = "沒料";
                     label2.Text += error5.ToString();
                     label2.Text += strSQL3;
-                
+
                 }
                 //beSearched = 0;
             }
@@ -186,20 +202,36 @@ namespace FinalProject_12
             {
                 listBox1.Items.Clear();
                 keywords = textBox1.Text;
+                
+                //路名驗證器
+                string roadValidator = keywords[keywords.Length-1].ToString();
+
+
                 for (int i = 0; i < dataCount; i++)
                 {
-                    strSQL2 = "SELECT * " +
+                    if(roadValidator == "路" || roadValidator == "街" || roadValidator == "段") {
+                        strSQL2 = "SELECT * " +
                               "FROM[Table]" +
                               "WHERE (( 店名 LIKE '" + keywords + "%' OR " +
                               "店名 LIKE N'%" + keywords + "%' OR " +
                               "店名 LIKE N'%" + keywords + "' OR " +
-                              "店名 = N'" + keywords + " ')"+
-                              " OR "+
+                              "店名 = N'" + keywords + " ')" +
+                              " OR " +
                               "(地址 LIKE '" + keywords + "%' OR " +
                               "地址 LIKE N'%" + keywords + "%' OR " +
                               "地址 LIKE N'%" + keywords + "' OR " +
                               "地址 = N'" + keywords + " '))" +
                               "AND Id > " + beSearched.ToString() + "";
+                    }
+                    else { 
+                    strSQL2 = "SELECT * " +
+                              "FROM[Table]" +
+                              "WHERE ( 店名 LIKE '" + keywords + "%' OR " +
+                              "店名 LIKE N'%" + keywords + "%' OR " +
+                              "店名 LIKE N'%" + keywords + "' OR " +
+                              "店名 = N'" + keywords + " ')"+
+                              "AND Id > " + beSearched.ToString() + "";
+                    }
                     try
                     {
                         sqlSearch1(keywords, strSQL2);
@@ -343,10 +375,12 @@ namespace FinalProject_12
             //Console.WriteLine(shopName);
             //點選到我們要跳新視窗，還是彈出窗格?我先做跳新視窗的
             //Form2 f = new Form2();  //括號內是用來傳東西的
+            if(dataName != "") { 
             Form2 f = new Form2(shopName, dataName);
             //this.Visible = false;  //我是覺得不要讓低一個form消失比較好
             //f.Visible = true;
             f.Show(this);
+            }
 
         }
 
@@ -361,13 +395,10 @@ namespace FinalProject_12
             sqlSearch1(keywords, strSQL4);
             dataName = goToNextForm(diceShop);
             Form2 f = new Form2(diceShop, dataName);
+            f.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             f.Show(this);
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            label1.Visible = false;
-        }
-
+       
     }
 }

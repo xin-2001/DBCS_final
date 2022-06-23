@@ -95,6 +95,7 @@ namespace FinalProject_12
             this.textBox1.TabIndex = 7;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.userPressEnter);
             // 
             // label1
             // 
@@ -117,12 +118,11 @@ namespace FinalProject_12
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(83, 459);
+            this.label2.Location = new System.Drawing.Point(0, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 15);
             this.label2.TabIndex = 10;
             this.label2.Text = "label1";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tableBindingSource1
             // 
@@ -260,11 +260,11 @@ namespace FinalProject_12
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(622, 566);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "特約搜尋器";
